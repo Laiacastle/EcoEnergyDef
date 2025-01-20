@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore EcoEnergyDef.sln
     - name: Build
-      run: dotnet EcoEnergyDef.sln build --no-restore
+      run: dotnet build EcoEnergyDef.sln --no-restore
     - name: Test
       run: dotnet test EcoEnergyDef.sln --no-build --verbosity normal
