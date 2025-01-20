@@ -17,6 +17,7 @@ namespace EcoEnergyDef
             Date = DateTime.Today;
             Type = "Solar";
             HoresSol = horesSol;
+            Contador++;
         }
     }
 }
