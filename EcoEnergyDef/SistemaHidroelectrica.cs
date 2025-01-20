@@ -17,6 +17,7 @@ namespace EcoEnergyDef
             Date = DateTime.Today;
             Type = "Hidroelectrica";
             CabalAigua = cabalAigua;
+            Contador++;
         }
     }
 }

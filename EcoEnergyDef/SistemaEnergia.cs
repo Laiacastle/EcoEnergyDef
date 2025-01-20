@@ -11,5 +11,7 @@ namespace EcoEnergyDef
         protected DateTime Date { get; set; }
         protected string? Type { get; set; }
 
+        protected int Contador { get; set; }
+
     }
 }

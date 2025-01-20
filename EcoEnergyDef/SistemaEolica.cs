@@ -18,6 +18,7 @@ namespace EcoEnergyDef
             Date = DateTime.Today;
             Type = "Eolica";
             VelocitatVent = velocitatVent;
+            Contador++;
         }
 
     }
