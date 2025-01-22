@@ -11,7 +11,6 @@ namespace EcoEnergyDef
         bool ConfParametre();
         double CalcEnergia();
         void MostraInforme();
-        string MostrarInfo();
 
     }
 }
