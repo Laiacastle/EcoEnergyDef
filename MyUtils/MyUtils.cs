@@ -138,10 +138,10 @@ namespace MyUtils
         {
             const string MsgTipus = "\t\t\t\tIndica el tipus d'energia (solar, eolica, hidroelectrica)",
             MsgError = "\t\t\t\tEl valor es incorrecte";
-            string? tipus;
+            
             Console.WriteLine(MsgTipus);
             Console.Write("\t\t> ");
-            tipus = Console.ReadLine().ToUpper();
+            string? tipus = Console.ReadLine().ToUpper();
             while (tipus != "EOLICA" && tipus != "HIDROELECTRICA" && tipus != "SOLAR")
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
