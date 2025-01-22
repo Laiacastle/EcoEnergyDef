@@ -12,7 +12,7 @@ namespace EcoEnergyDef
         public double CabalAigua { get; set; }
         public override double CalcEnergia() => Math.Round(this.CabalAigua * 9.8 * 0.8);
         public override void MostraInforme() => Console.WriteLine($"\t\t-------------------------------------------------------------------------\n\t\t|        Data         |      Tipus      |   Cabal d'aigua   | Instancia |\n\t\t-------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} | {this.Type}  |       {this.CabalAigua}          |     {CalcEnergia()}     |\n\t\t-------------------------------------------------------------------------");
-        public override void MostraDades() => Console.WriteLine($"\t\t-------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} | {this.Type}  |       {this.CabalAigua}          |     {CalcEnergia()}     |\n\t\t-------------------------------------------------------------------------");
+        public override string? ToString() => $"\t\t----------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} | {this.Type}  |       {this.CabalAigua}          |     {CalcEnergia()}     |\n\t\t----------------------------------------------------------------------------";
         public override bool ConfParametre() => this.CabalAigua >= 20.0;
         public SistemaHidroelectrica(double cabalAigua)
         {
