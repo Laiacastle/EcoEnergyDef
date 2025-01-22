@@ -16,7 +16,6 @@ namespace EcoEnergyDef
         public virtual bool ConfParametre() { return true; }
         public virtual double CalcEnergia() { return 0.0; }
         public virtual void MostraInforme() { }
-        public virtual void MostraDades() { }
 
     }
 }

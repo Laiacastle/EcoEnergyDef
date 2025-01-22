@@ -12,8 +12,8 @@ namespace EcoEnergyDef
         public double HoresSol { get; set; }
         public override double CalcEnergia() => Math.Round(this.HoresSol * 1.5);
         public override void MostraInforme() => Console.WriteLine($"\t\t-------------------------------------------------------------------------\n\t\t|        Data         |      Tipus      |    Hores de sol   | Instancia | \n\t\t-------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} |      {this.Type}      |       {this.HoresSol}          |     {CalcEnergia()}     |\n\t\t-------------------------------------------------------------------------");
-        public override void MostraDades() => Console.WriteLine($"\t\t-------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} |      {this.Type}      |       {this.HoresSol}          |     {CalcEnergia()}     |\n\t\t-------------------------------------------------------------------------");
-        public override bool ConfParametre() => this.HoresSol >= 1.0;
+        public override string? ToString() => $"\t\t----------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} |      {this.Type}      |       {this.HoresSol}          |     {CalcEnergia()}     |\n\t\t----------------------------------------------------------------------------";
+        public override bool ConfParametre() => this.HoresSol >= 1;
         public SistemaSolar(double horesSol)
         {
             Date = DateTime.Now;
