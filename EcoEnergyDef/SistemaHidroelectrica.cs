@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace EcoEnergyDef
 {
-    public class SistemaHidroelectric : SistemaEnergia, ICalculEnergia
+    public class SistemaHidroelectrica : SistemaEnergia
     {
+        private static int _contador = 0;
         public double CabalAigua { get; set; }
-        public double CalcEnergia() => this.CabalAigua * 9.8 * 0.8;
-        public void MostraInforme() => Console.WriteLine($"data: {this.Date} tipus: {this.Type} cabal d'aigua: {this.CabalAigua}");
-        public bool ConfParametre() => this.CabalAigua >= 20.0;
-        public SistemaHidroelectric(double cabalAigua)
+        public override double CalcEnergia() => Math.Round(this.CabalAigua * 9.8 * 0.8);
+        public override void MostraInforme() => Console.WriteLine($"\t\t-------------------------------------------------------------------------\n\t\t|        Data         |      Tipus      |   Cabal d'aigua   | Instancia |\n\t\t-------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} | {this.Type}  |       {this.CabalAigua}          |     {CalcEnergia()}     |\n\t\t-------------------------------------------------------------------------");
+        public override void MostraDades() => Console.WriteLine($"\t\t-------------------------------------------------------------------------\n\t\t| {this.Date.ToString()} | {this.Type}  |       {this.CabalAigua}          |     {CalcEnergia()}     |\n\t\t-------------------------------------------------------------------------");
+        public override bool ConfParametre() => this.CabalAigua >= 20.0;
+        public SistemaHidroelectrica(double cabalAigua)
         {
-            Date = DateTime.Today;
+            Date = DateTime.Now;
             Type = "Hidroelectrica";
             CabalAigua = cabalAigua;
-            Contador++;
+            _contador++;
+        }
+        public SistemaHidroelectrica(double cabalAigua, DateTime data)
+        {
+            Date = data;
+            Type = "Hidoelectrica";
+            CabalAigua = cabalAigua;
+            _contador++;
         }
     }
 }

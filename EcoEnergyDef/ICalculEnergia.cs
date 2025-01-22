@@ -8,9 +8,9 @@ namespace EcoEnergyDef
 {
     public interface ICalculEnergia
     {
-        public bool ConfParametre();
-        public double CalcEnergia();
-        public void MostraInforme();
+        bool ConfParametre();
+        double CalcEnergia();
+        void MostraInforme();
 
     }
 }
