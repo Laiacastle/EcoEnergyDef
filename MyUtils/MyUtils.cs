@@ -33,7 +33,7 @@ namespace MyUtils
             const string MsgError = "\t\t\t\tEl valor no és un número!";
             double result;
             Console.Write("\t\t> ");
-            string? num = Console.ReadLine();
+            string? num = Console.ReadLine() ?? "a";
             try
             {
                 result = Convert.ToDouble(num);
@@ -56,7 +56,7 @@ namespace MyUtils
             const string Msg = "\t\t\t\tEl format no es correcte",
                 MsgInp = "\t\t> ";
             Console.Write(MsgInp);
-            string? num = Console.ReadLine();
+            string? num = Console.ReadLine() ?? "a";
             int result;
             if (!ComprovarNum(num))
             {
@@ -75,14 +75,14 @@ namespace MyUtils
                     {
                         CambiarColor(Msg, "red");
                         Console.Write(MsgInp);
-                        result = Convert.ToInt32(Console.ReadLine());
+                        result = Convert.ToInt32(Console.ReadLine() ?? "0");
                     }; break;
                 case 2:
                     while (result > num2 || result > 99)
                     {
                         CambiarColor(Msg, "red");
                         Console.Write(MsgInp);
-                        result = Convert.ToInt32(Console.ReadLine());
+                        result = Convert.ToInt32(Console.ReadLine() ?? "0");
                     }; break;
             }
             return result;
@@ -112,7 +112,7 @@ namespace MyUtils
         {
             const string Msg = "\t\t\t\tAquesta opció no es valida!";
             Console.Write("\t\t> ");
-            string? opcio = Console.ReadLine();
+            string? opcio = Console.ReadLine() ?? "0";
             int result;
             while (opcio != "1" && opcio != "2" && opcio != "3")
             {
@@ -120,7 +120,7 @@ namespace MyUtils
                 Console.WriteLine(Msg);
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("\t\t> ");
-                opcio = Console.ReadLine();
+                opcio = Console.ReadLine() ?? "0";
             }
             result = Convert.ToInt32(opcio);
             return result;
@@ -138,17 +138,43 @@ namespace MyUtils
 
             Console.WriteLine(MsgTipus);
             Console.Write("\t\t> ");
-            string? tipus = Console.ReadLine() ?? "";
+            string? tipus = Console.ReadLine() ?? "a";
             tipus = tipus.ToUpper();
             while (tipus != "EOLICA" && tipus != "HIDROELECTRICA" && tipus != "SOLAR")
             {
                 Utils.CambiarColor(MsgError, "red");
                 Console.Write("\t\t> ");
-                tipus = Console.ReadLine() ?? "";
+                tipus = Console.ReadLine() ?? "a";
                 tipus = tipus.ToUpper();
             }
 
             if (tipus == "EOLICA") { return 1; } else if (tipus == "HIDROELECTRICA") { return 2; } else { return 3; }
+        }
+
+        //Per cambiar el color al text
+
+        public static Color ObtenirColor(string color)
+        {
+            if (color.Equals("RED", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return Color.Red;
+            }
+            else if (color.Equals("YELLOW", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return Color.Yellow;
+            }
+            else if (color.Equals("BLUE", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return Color.Blue;
+            }
+            else if (color.Equals("GREEN", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return Color.Green;
+            }
+            else
+            {
+                return Color.Black;
+            }
         }
 
         /// <summary>
@@ -158,29 +184,19 @@ namespace MyUtils
         /// <returns>no retorna res</returns>
         public static void CambiarColor(string text, string color)
         {
-            if (color.ToUpper() == "RED")
+            switch (ObtenirColor(color))
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-            }
-            else if (color.ToUpper() == "YELLOW")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-            }
-            else if (color.ToUpper() == "BLUE")
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-            else if (color.ToUpper() == "GREEN")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Black;
+                case Color.Red: Console.ForegroundColor = ConsoleColor.DarkRed; break;
+                case Color.Blue: Console.ForegroundColor = ConsoleColor.DarkBlue; break;
+                case Color.Yellow: Console.ForegroundColor = ConsoleColor.DarkYellow; break;
+                case Color.Green: Console.ForegroundColor = ConsoleColor.DarkGreen; break;
+                case Color.Black: Console.ForegroundColor = ConsoleColor.Black; break;
             }
 
             Console.WriteLine(text);
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
+
 }
+

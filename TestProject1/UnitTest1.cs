@@ -140,5 +140,26 @@ namespace TestProject1
             //Assert
             Assert.True(result);
         }
+        [Fact]
+        public void ColorWhite()
+        {
+            //Arrange
+            string color = "White";
+            //Act
+            Color result = Utils.ObtenirColor(color);
+            //Assert
+            Assert.Equal(Color.Black, result);
+        }
+        [Fact]
+        public void ColorGreen()
+        {
+            //Arrange
+            string color = "green";
+            //Act
+            Color result = Utils.ObtenirColor(color);
+            //Assert
+            Assert.Equal(Color.Green, result);
+        }
+
     }
 }
