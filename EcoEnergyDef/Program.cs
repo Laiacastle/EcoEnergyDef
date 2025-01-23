@@ -24,9 +24,11 @@ namespace EcoEnergyDef
                 MsgErrorNoEspai = "\t\t\t\tJa no hi ha espai disponible!",
                 MsgCapçelera = "\t\t----------------------------------------------------------------------------\n\t\t|        Data         |      Tipus      |       Dada        |    Resultat  |\n\t\t----------------------------------------------------------------------------",
                 MsgFinal = "\t\t\t\t___________.__                            .__        __  ._.\r\n\t\t\t\\_   _____/|__| ____   ______ _____ ___  _|__|____ _/  |_| |\r\n |    __)  |  |/    \\ /  ___/ \\__  \\\\  \\/ /  \\__  \\\\   __\\ |\r\n |     \\   |  |   |  \\\\___ \\   / __ \\\\   /|  |/ __ \\|  |  \\|\r\n \\___  /   |__|___|  /____  > (____  /\\_/ |__(____  /__|  __\r\n     \\/            \\/     \\/       \\/             \\/      \\/";
-           
-            //creem l'array que guardará totes les instancies
-            SistemaEnergia[] objectes = new SistemaEnergia[99];
+
+
+            enum Color Red = Color.Red;
+        //creem l'array que guardará totes les instancies
+        SistemaEnergia[] objectes = new SistemaEnergia[99];
             Utils.CambiarColor(Title, Red);
             while (menu)
             {

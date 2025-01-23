@@ -151,6 +151,37 @@ namespace MyUtils
             if (tipus == "EOLICA") { return 1; } else if (tipus == "HIDROELECTRICA") { return 2; } else { return 3; }
         }
 
+        //Per cambiar el color al text
+         public enum Color {
+            Red,
+            Blue,
+            Green,
+            Yellow,
+            Black
+        }
+
+        public static Color ObtenirColor(string color) {
+            if (color.ToUpper() == "RED") {
+                return Color.Red;
+            }
+            else if (color.ToUpper() == "YELLOW")
+            {
+                return Color.Yellow;
+            }
+            else if (color.ToUpper() == "BLUE")
+            {
+                return Color.Blue;
+            }
+            else if (color.ToUpper() == "GREEN")
+            {
+                return Color.Green;
+            }
+            else
+            {
+                return Color.Black;
+            }
+        }
+
         /// <summary>
         ///  Canvia i printa el color del text
         /// </summary>
@@ -158,27 +189,13 @@ namespace MyUtils
         /// <returns>no retorna res</returns>
         public static void CambiarColor(string text, string color)
         {
-            if(color.ToUpper() == "RED") 
+            switch (ObtenirColor(color))
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-            }
-            else if (color.ToUpper() == "BLUE")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-            }
-            else if (color.ToUpper() == "YELLOW")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-            }else if (color.ToUpper() == "BLUE")
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }else if(color.ToUpper() == "GREEN")
-            {
-                Console.ForegroundColor= ConsoleColor.DarkGreen;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Black;
+                case Color.Red:Console.ForegroundColor = ConsoleColor.DarkRed;break;
+                case Color.Blue: Console.ForegroundColor = ConsoleColor.DarkBlue;break;
+                case Color.Yellow: Console.ForegroundColor = ConsoleColor.DarkYellow;break;
+                case Color.Green: Console.ForegroundColor= ConsoleColor.DarkGreen;break;
+                case Color.Black: Console.ForegroundColor = ConsoleColor.Black;break;
             }
             
             Console.WriteLine(text);
