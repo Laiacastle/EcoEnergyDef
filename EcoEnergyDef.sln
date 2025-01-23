@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoEnergyDef", "EcoEnergyDef\EcoEnergyDef.csproj", "{C9AC9328-FD33-4B70-9DDF-70731D341EE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUtils", "MyUtils\MyUtils.csproj", "{5F3C81C1-9CD1-4685-855E-178EC575A00C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{65850294-836A-4A47-B238-DCE74A1BD4C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5F3C81C1-9CD1-4685-855E-178EC575A00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3C81C1-9CD1-4685-855E-178EC575A00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3C81C1-9CD1-4685-855E-178EC575A00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65850294-836A-4A47-B238-DCE74A1BD4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65850294-836A-4A47-B238-DCE74A1BD4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65850294-836A-4A47-B238-DCE74A1BD4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65850294-836A-4A47-B238-DCE74A1BD4C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
