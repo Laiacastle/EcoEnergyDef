@@ -22,6 +22,12 @@ HIDROELECTRICA:
 - numeros mayors 20
 
 ## Valors limit
+|hidrp20 |comprova que el numero sigui mayor que 20 | 20 | true | - |
+| hidro19 | comprova que el numero sigui mayor que 20 | 19 | false | - |
+| hidro21 | comprova que el numero sigui mayor que 21 | 21 | true | - |
+| ComprovarLletra | comprova si un string es un número| "abc" | False| - |
+| ComprovarNum | comprova si un string és un número | "23" | True | - |
+
 
 - 1
 - 2
@@ -57,12 +63,11 @@ HIDROELECTRICA
 |eolica5|comprova que el numero sigui mayor que 5 | 5 | true | - |
 |eolica6|comprova que el numero sigui mayor que 5 | 6 | true | - |
 |eolica4|comprova que el numero sigui mayor que 5| 4 | false | - |
-
-## Link document drive
-https://docs.google.com/document/d/1bmvo9L728bWMUJ9hVqH1UYgnYddH0--V2FnONoRb9kw/edit?usp=sharing
-
 |hidrp20 |comprova que el numero sigui mayor que 20 | 20 | true | - |
 | hidro19 | comprova que el numero sigui mayor que 20 | 19 | false | - |
 | hidro21 | comprova que el numero sigui mayor que 21 | 21 | true | - |
 | ComprovarLletra | comprova si un string es un número| "abc" | False| - |
 | ComprovarNum | comprova si un string és un número | "23" | True | - |
+
+## Link document drive
+https://docs.google.com/document/d/1bmvo9L728bWMUJ9hVqH1UYgnYddH0--V2FnONoRb9kw/edit?usp=sharing
