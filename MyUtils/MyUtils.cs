@@ -162,10 +162,6 @@ namespace MyUtils
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
             }
-            else if (color.ToUpper() == "BLUE")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-            }
             else if (color.ToUpper() == "YELLOW")
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
