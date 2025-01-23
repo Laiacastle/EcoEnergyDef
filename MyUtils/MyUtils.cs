@@ -49,9 +49,9 @@ namespace MyUtils
         }
 
         /// <summary>
-        ///  Compara un n'umero introduit per teclat amb un altre
+        ///  Compara un número introduit per teclat amb un altre
         /// </summary>
-        /// <param>int i 1, 2 dep'en de la posici'o del m'es gran</param>
+        /// <param>int i 1, 2 depén de la posició del més gran</param>
         /// <returns>retorna int</returns>
         public static int ComprovarNum(int num2, int compara) 
         {

@@ -60,3 +60,5 @@ HIDROELECTRICA
 |hidrp20 |comprova que el numero sigui mayor que 20 | 20 | true | - |
 | hidro19 | comprova que el numero sigui mayor que 20 | 19 | false | - |
 | hidro21 | comprova que el numero sigui mayor que 21 | 21 | true | - |
+| ComprovarLletra | comprova si un string es un número| "abc" | False| - |
+| ComprovarNum | comprova si un string és un número | "23" | True | - |
