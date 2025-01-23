@@ -159,6 +159,7 @@ namespace MyUtils
             {
                 return Color.Red;
             }
+
             else if (color.Equals("YELLOW", StringComparison.CurrentCultureIgnoreCase))
             {
                 return Color.Yellow;
