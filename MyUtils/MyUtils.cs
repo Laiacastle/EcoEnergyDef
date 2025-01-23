@@ -40,9 +40,7 @@ namespace MyUtils
             }
             catch (FormatException)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(MsgError);
-                Console.ForegroundColor = ConsoleColor.White;
+                CambiarColor(MsgError, "red");
                 result = ComprovarNum();
             }
             return result;
@@ -55,15 +53,14 @@ namespace MyUtils
         /// <returns>retorna int</returns>
         public static int ComprovarNum(int num2, int compara) 
         {
-            const string Msg = "\t\t\t\tEl format no es correcte";
-            Console.Write("\t\t> ");
+            const string Msg = "\t\t\t\tEl format no es correcte",
+                MsgInp = "\t\t> ";
+            Console.Write(MsgInp);
             string? num = Console.ReadLine();
             int result;
             if (!ComprovarNum(num))
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(Msg);
-                Console.ForegroundColor = ConsoleColor.White;
+                CambiarColor(Msg, "red");
                 result = ComprovarNum(num2, compara);
             }
             else
@@ -74,15 +71,17 @@ namespace MyUtils
             switch (compara)
             {
                 case 1:
-                    while (result < num2 && result == 0) 
+                    while (result < num2 || result > 99) 
                     {
-                        Console.WriteLine(Msg);
+                        CambiarColor(Msg, "red");
+                        Console.Write(MsgInp);
                         result = Convert.ToInt32(Console.ReadLine());
                     };break;
                 case 2:
-                    while (result > num2 && result == 0) 
+                    while (result > num2 || result > 99) 
                     {
-                        Console.WriteLine(Msg);
+                        CambiarColor(Msg, "red");
+                        Console.Write(MsgInp);
                         result = Convert.ToInt32(Console.ReadLine());
                     }; break;
             }
@@ -100,9 +99,7 @@ namespace MyUtils
             const string CapMenu = "\n\n\t\t\t  ______     _                                                _     \r\n\t\t\t /_  __/____(_)___ _   __  ______  ____ _   ____  ____  _____(_)___ \r\n\t\t\t  / / / ___/ / __ `/  / / / / __ \\/ __ `/  / __ \\/ __ \\/ ___/ / __ \\\r\n\t\t\t / / / /  / / /_/ /  / /_/ / / / / /_/ /  / /_/ / /_/ / /__/ / /_/ /\r\n\t\t\t/_/ /_/  /_/\\__,_/   \\__,_/_/ /_/\\__,_/   \\____/ .___/\\___/_/\\____/ \r\n\t\t\t                                              /_/                   ",
                 MenuOpcions = "\t\t\t\t1. Iniciar simulacions \n\t\t\t\t2. Veure informe de simulacions\n\t\t\t\t3. Sortir",
                 MenuSep = "\t\t\t\t************************************";
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine(CapMenu);
-            Console.ForegroundColor = ConsoleColor.White;
+            CambiarColor(CapMenu, "blue");
             Console.WriteLine(MenuSep);
             Console.WriteLine(MenuOpcions);
         }
@@ -141,17 +138,51 @@ namespace MyUtils
             
             Console.WriteLine(MsgTipus);
             Console.Write("\t\t> ");
-            string? tipus = Console.ReadLine().ToUpper();
+            string? tipus = Console.ReadLine() ?? "";
+            tipus = tipus.ToUpper();
             while (tipus != "EOLICA" && tipus != "HIDROELECTRICA" && tipus != "SOLAR")
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(MsgError);
-                Console.ForegroundColor = ConsoleColor.White;
+                Utils.CambiarColor(MsgError, "red");
                 Console.Write("\t\t> ");
-                tipus = Console.ReadLine().ToUpper();
+                tipus = Console.ReadLine() ?? "";
+                tipus = tipus.ToUpper();
             }
             
             if (tipus == "EOLICA") { return 1; } else if (tipus == "HIDROELECTRICA") { return 2; } else { return 3; }
+        }
+
+        /// <summary>
+        ///  Canvia i printa el color del text
+        /// </summary>
+        /// <param>text i color</param>
+        /// <returns>no retorna res</returns>
+        public static void CambiarColor(string text, string color)
+        {
+            if(color.ToUpper() == "RED") 
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+            }
+            else if (color.ToUpper() == "BLUE")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+            }
+            else if (color.ToUpper() == "YELLOW")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }else if (color.ToUpper() == "BLUE")
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }else if(color.ToUpper() == "GREEN")
+            {
+                Console.ForegroundColor= ConsoleColor.DarkGreen;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
+            
+            Console.WriteLine(text);
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
